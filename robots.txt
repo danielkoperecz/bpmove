@@ -1,4 +1,4 @@
-# robots.txt – GyorsKöltöztető
+# robots.txt – BPMOVE
 User-agent: *
 Allow: /
 Disallow: /admin/
@@ -29,4 +29,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://www.example.hu/sitemap.xml
+Sitemap: https://www.bpmove.hu/sitemap.xml
