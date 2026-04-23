@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
+.output
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Lock files – keep pnpm-lock.yaml committed, ignore others
+package-lock.json
+yarn.lock
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp

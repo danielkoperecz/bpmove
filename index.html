@@ -1786,23 +1786,69 @@
         >
 
         <script>
-            // Simple form handling (demo – replace with real backend integration)
+            // Form handling: POST to backend (/api/quote) which sends the email
             function handleForm(formId, successId) {
                 const form = document.getElementById(formId);
                 if (!form) return;
-                form.addEventListener("submit", (e) => {
+                const successEl = document.getElementById(successId);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn ? submitBtn.innerHTML : "";
+
+                form.addEventListener("submit", async (e) => {
                     e.preventDefault();
-                    // TODO: replace with fetch() POST to your backend / webhook / email service
-                    // Example: fetch('/api/quote', { method: 'POST', body: new FormData(form) })
-                    document.getElementById(successId).classList.add("show");
-                    form.reset();
-                    setTimeout(
-                        () =>
-                            document
-                                .getElementById(successId)
-                                .classList.remove("show"),
-                        6000,
-                    );
+
+                    // Collect form data as JSON
+                    const data = Object.fromEntries(new FormData(form));
+
+                    // UI: loading state
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = "Küldés folyamatban…";
+                    }
+                    successEl.classList.remove("show");
+                    successEl.style.background = "";
+                    successEl.style.color = "";
+
+                    try {
+                        const res = await fetch("/api/quote", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                Accept: "application/json",
+                            },
+                            body: JSON.stringify(data),
+                        });
+
+                        const payload = await res.json().catch(() => ({}));
+                        if (!res.ok) {
+                            throw new Error(
+                                payload.error ||
+                                    "Az üzenet küldése sikertelen volt.",
+                            );
+                        }
+
+                        successEl.innerHTML =
+                            "\u2705 Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.";
+                        successEl.classList.add("show");
+                        form.reset();
+                    } catch (err) {
+                        successEl.innerHTML =
+                            "\u26A0\uFE0F " +
+                            (err.message ||
+                                "Az üzenet küldése sikertelen volt. Kérjük, próbálja meg később vagy hívjon minket.");
+                        successEl.style.background = "#fee2e2";
+                        successEl.style.color = "#991b1b";
+                        successEl.classList.add("show");
+                    } finally {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                        }
+                        setTimeout(
+                            () => successEl.classList.remove("show"),
+                            8000,
+                        );
+                    }
                 });
             }
             handleForm("quoteForm", "successMsg");

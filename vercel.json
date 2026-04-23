@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/quote.js": {
+      "includeFiles": "email-template.html",
+      "maxDuration": 10
+    }
+  }
+}
