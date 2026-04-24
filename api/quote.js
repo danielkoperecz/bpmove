@@ -139,7 +139,7 @@ export default async function handler(req, res) {
         ].join("\n");
 
         const recipient =
-            process.env.RECIPIENT_EMAIL || "sevendiko@gmail.com";
+            process.env.RECIPIENT_EMAIL || "adamkocsis28@gmail.com";
 
         await getTransporter().sendMail({
             from:
