@@ -212,7 +212,6 @@ footer .logo-tagline {
 .btn-ghost:hover {
     background: var(--bg-soft);
     color: var(--brand);
-    border-color: var(--brand);
 }
 
 /* Hero context (dark background) variant of btn-ghost */
@@ -221,9 +220,9 @@ footer .logo-tagline {
     border-color: rgba(255, 255, 255, 0.3);
 }
 .hero .btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: #fff;
     color: var(--brand);
-    border-color: var(--brand);
+    border-color: #fff;
 }
 .btn-lg {
     padding: 16px 28px;
