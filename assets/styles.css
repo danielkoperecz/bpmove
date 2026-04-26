@@ -211,6 +211,7 @@ footer .logo-tagline {
 }
 .btn-ghost:hover {
     background: var(--bg-soft);
+    color: var(--brand);
 }
 .btn-lg {
     padding: 16px 28px;
