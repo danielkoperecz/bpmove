@@ -1,0 +1,196 @@
+<!--
+  BPMOVE – e-mail aláírás
+  ----------------------
+  Hogyan használd:
+  1. Másold ki ennek a fájlnak a TARTALMÁT (a kommentet alatti részt, a <table>-től kezdve)
+  2. Gmail: Beállítások → Általános → Aláírás → "Új aláírás létrehozása" → illeszd be (vagy formázott HTML-ként a böngésző fejlesztői eszközéből beillesztve)
+     Egyszerűbben: nyisd meg ezt a fájlt böngészőben, jelöld ki Cmd+A-val az egészet, másold Cmd+C-vel, majd illeszd be Cmd+V-vel a Gmail aláírás mezőjébe.
+  3. Outlook: Fájl → Beállítások → Levél → Aláírások → új aláírás → illeszd be HTML-ben.
+  4. Apple Mail: Beállítások → Aláírások → új → illeszd be (lehet, hogy a "Mindig az alapértelmezett betűtípust használja" opciót ki kell venni).
+
+  Cseréld a saját nevedre / pozíciódra a következő helyeken:
+    - "Kovács Anna"      ← A te neved
+    - "ügyfélkapcsolat"  ← A pozíciód (vagy hagyd üresen)
+-->
+<table
+    cellpadding="0"
+    cellspacing="0"
+    border="0"
+    style="
+        font-family:
+            -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            'Helvetica Neue', Arial, sans-serif;
+        color: #0f172a;
+        font-size: 14px;
+        line-height: 1.5;
+        border-collapse: collapse;
+    "
+>
+    <tr>
+        <!-- Logo / badge -->
+        <td
+            valign="top"
+            style="
+                padding-right: 18px;
+                border-right: 3px solid #ea580c;
+            "
+        >
+            <table
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+            >
+                <tr>
+                    <td
+                        align="center"
+                        valign="middle"
+                        width="64"
+                        height="64"
+                        style="
+                            width: 64px;
+                            height: 64px;
+                            background: #ea580c;
+                            background-image: linear-gradient(
+                                135deg,
+                                #ea580c 0%,
+                                #f97316 100%
+                            );
+                            border-radius: 14px;
+                            color: #ffffff;
+                            font-size: 32px;
+                            font-weight: bold;
+                            line-height: 64px;
+                            text-align: center;
+                        "
+                    >
+                        📦
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- Spacer -->
+        <td width="18" style="width: 18px"></td>
+
+        <!-- Name + contact info -->
+        <td valign="top" style="padding: 0">
+            <!-- Name -->
+            <div
+                style="
+                    font-size: 17px;
+                    font-weight: 700;
+                    color: #0f172a;
+                    margin-bottom: 2px;
+                "
+            >
+                Kovács Anna
+            </div>
+            <!-- Title -->
+            <div
+                style="
+                    font-size: 13px;
+                    color: #64748b;
+                    margin-bottom: 8px;
+                "
+            >
+                ügyfélkapcsolat &middot;
+                <span style="color: #ea580c; font-weight: 600">BPMOVE</span>
+            </div>
+
+            <!-- Contact rows -->
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td
+                        style="
+                            font-size: 13px;
+                            color: #475569;
+                            padding: 1px 0;
+                        "
+                    >
+                        📞
+                        <a
+                            href="tel:+36301554066"
+                            style="
+                                color: #475569;
+                                text-decoration: none;
+                                font-weight: 500;
+                            "
+                            >06 30 155 4066</a
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td
+                        style="
+                            font-size: 13px;
+                            color: #475569;
+                            padding: 1px 0;
+                        "
+                    >
+                        ✉️
+                        <a
+                            href="mailto:info@bpmove.hu"
+                            style="
+                                color: #475569;
+                                text-decoration: none;
+                                font-weight: 500;
+                            "
+                            >info@bpmove.hu</a
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td
+                        style="
+                            font-size: 13px;
+                            color: #475569;
+                            padding: 1px 0;
+                        "
+                    >
+                        🌐
+                        <a
+                            href="https://bpmove.hu"
+                            style="
+                                color: #475569;
+                                text-decoration: none;
+                                font-weight: 500;
+                            "
+                            >bpmove.hu</a
+                        >
+                    </td>
+                </tr>
+            </table>
+
+            <!-- CTA pill -->
+            <div style="margin-top: 10px">
+                <a
+                    href="https://bpmove.hu/#arajanlat"
+                    style="
+                        display: inline-block;
+                        background: #ea580c;
+                        color: #ffffff;
+                        text-decoration: none;
+                        padding: 7px 14px;
+                        border-radius: 8px;
+                        font-size: 12px;
+                        font-weight: 600;
+                    "
+                    >📦 Kérjen ingyenes árajánlatot</a
+                >
+            </div>
+
+            <!-- Disclaimer -->
+            <div
+                style="
+                    font-size: 11px;
+                    color: #94a3b8;
+                    margin-top: 10px;
+                    line-height: 1.4;
+                "
+            >
+                Költöztetés &middot; Lomtalanítás &middot; Iroda &middot;
+                Zongora &middot; Csomagolás &middot; 0-24
+            </div>
+        </td>
+    </tr>
+</table>
