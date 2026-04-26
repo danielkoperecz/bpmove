@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "@vercel/og": "^0.6.3",
     "nodemailer": "^6.9.15"
   },
   "devDependencies": {
